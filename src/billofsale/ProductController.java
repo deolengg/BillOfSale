@@ -10,63 +10,73 @@ package billofsale;
  * @author karan
  */
 public class ProductController {
-    private String pName; 
+
+    private String pName;
     private int pCode;
     private String pDescription;
-    private double pPrice;
-    private int pQuantity;
-    
+    double pPrice;
+    int pQuantity;
+    boolean pSale;
 
-    public ProductController(String name,int code,String desc,double price,int qty) {
+    public ProductController(String name, int code, String desc, double price, int qty) {
         pName = name;
         pCode = code;
-        pDescription =desc;
+        pDescription = desc;
         pPrice = price;
-        pQuantity=qty;
-    }
-    public ProductController(){
-        
-    }
-    
-    public String getpName(){
-        return pName;
-    }
-    public void setpName(String name){
-        pName = name;
-    }
-    
-    public int getpCode(){
-        return pCode;
-    }
-     public void setpCode(int code){
-       pCode = code;
-    }
-    
-    public String getpDescription(){
-        return pDescription;
-    }
-    
-    public void setpDescription(String description){
-        pDescription = description;
-    }
-    
-    public double getpPrice(){
-        return pPrice;
-    }
-    
-    public void setpPrice(double price){
-        pPrice = price;
-    }
-    
-    public int getQuantity(){
-        return pQuantity;
-    }
-    public void setpQuantity(int quantity){
-               pQuantity= quantity; 
+        pQuantity = qty;
     }
 
-    public String toStringStock(){
-        return "Name: "+pName+" Code: "+pCode+" Description: "+pDescription+" Price: "+pPrice+" Quantity: "+pQuantity;
+    public ProductController() {
+        
     }
-    
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String name) {
+        pName = name;
+    }
+
+    public int getpCode() {
+        return pCode;
+    }
+
+    public void setpCode(int code) {
+        pCode = code;
+    }
+
+    public String getpDescription() {
+        return pDescription;
+    }
+
+    public void setpDescription(String description) {
+        pDescription = description;
+    }
+
+    public double getpPrice() {
+        return pPrice;
+    }
+
+    public void setpPrice(double price) {
+        pPrice = price;
+    }
+
+    public int getpQuantity() {
+        return pQuantity;
+    }
+    public void setpQuantity(int setQty) {
+        pQuantity=setQty;
+    }
+
+    public void putSaleOnProduct(double price) {
+        if (pSale = true){
+        setpPrice(price);
+        }
+    }
+
+    public String toStringProduct() {
+        return "Name: " + pName + " Code: " + pCode + " Description: " + pDescription + " Price: " + pPrice + " Quantity: " + pQuantity;
+    }
+
 }

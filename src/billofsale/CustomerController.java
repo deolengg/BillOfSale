@@ -14,7 +14,7 @@ public class CustomerController {
     private int cCustomerNumber;
     private int cPhoneNumber;
     private String cEmailId;
-    private static int CCounter = 01;
+    private int CCounter = 01;
     
     public void CustomerController(){
         
@@ -36,9 +36,10 @@ public class CustomerController {
     }
     
     public int getCustomerNumber(){
-        return cCustomerNumber=CCounter++;
+        return cCustomerNumber;
     }
     public void setCustomerNumber(int Cnumber){
+        Cnumber=CCounter++;
         cCustomerNumber=Cnumber;
     }
     
@@ -46,7 +47,7 @@ public class CustomerController {
         return cEmailId;
     }
     public void setCustomerEmailId(String cEmailId){
-        cEmailId=cEmailId;
+        this.cEmailId=cEmailId;
     }
     
     public int getCustomerPhoneNumber(){
