@@ -18,6 +18,7 @@ public class BillOfSale {
     static InventoryController IC = new InventoryController();
     static ProductController[] stockList = new ProductController[productCounter];
     static CustomerController CC = new CustomerController();
+    static BillController BC = new BillController();
     
     
     
@@ -151,7 +152,8 @@ public class BillOfSale {
         //loop for how many products customer want and its quanitity
         System.out.println("Enter the product code");
         //get product code
-        stockList[1].getpCode();
+        int code= SCN.nextInt();
+        stockList[code].getpCode();
         System.out.println("Enter Quantity for that product");
         //get quantity for that product
         stockList[1].getpQuantity();
@@ -165,8 +167,9 @@ public class BillOfSale {
         int q = IC.getNewpQuantityInHand(stockList[1].getpQuantity(),IC.getQuantitySelected()); // quantity selected - product stock list
         stockList[1].setpQuantity(q); 
         
-        IC.getNewpQuantityInHand(phone, q);
+       // IC.getNewpQuantityInHand(phone, q);
         
         double subtotal = IC.genrateSubBill(stockList[1].getpPrice(), IC.getQuantitySelected()); // genrating sub bill from price * selected QTY
+        double totaltotal = BC.generateTotalBill(subtotal);
     }
 }
