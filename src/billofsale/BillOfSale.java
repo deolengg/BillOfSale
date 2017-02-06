@@ -54,7 +54,7 @@ public class BillOfSale {
         
         
       
-        double subtotal = IC.genrateSubBill(stockList[0].getpPrice(), IC.getQuantitySelected()); // genrating sub bill from price * selected QTY
+        double subtotal = BC.genrateSubBill(stockList[0].getpPrice(), IC.getQuantitySelected()); // genrating sub bill from price * selected QTY
        
         
         //BillController
@@ -169,7 +169,14 @@ public class BillOfSale {
         
        // IC.getNewpQuantityInHand(phone, q);
         
-        double subtotal = IC.genrateSubBill(stockList[1].getpPrice(), IC.getQuantitySelected()); // genrating sub bill from price * selected QTY
+        double subtotal = BC.genrateSubBill(stockList[1].getpPrice(), IC.getQuantitySelected()); // genrating sub bill from price * selected QTY
         double totaltotal = BC.generateTotalBill(subtotal);
+        
+        //change product quantity
+        //genrate purshase list
+        stockList[1].getpQuantity(); // show current quantity
+        int x = 100; // customer selects new quanity
+        stockList[1].setpQuantity(x); // new quantity is set 
+        
     }
 }

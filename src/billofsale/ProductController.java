@@ -74,6 +74,7 @@ public class ProductController {
         setpPrice(price);
         }
     }
+    
 
     public String toStringProduct() {
         return "Name: " + pName + " Code: " + pCode + " Description: " + pDescription + " Price: " + pPrice + " Quantity: " + pQuantity;

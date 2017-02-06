@@ -51,7 +51,9 @@ public class InventoryController {
 
     public void genratePurhchaseList(int qty) {
         System.out.println("Purchase List, Quantity for this product is  "+qty+"  which is less then 10");
+        System.out.println("Please Order a new Shipment");
     }
+    
 
     public void instantiatInventory(ProductController[] stockList) {
         for (int i = 0; i < stockList.length; i++) {
@@ -78,11 +80,7 @@ public class InventoryController {
         }
     }
 
-    public double genrateSubBill(double price, int sQty) {
-        double subBill;
-        subBill = price * sQty;
-        return subBill;
-    }
+    
 
     public double serachByPrice(double price) {
 

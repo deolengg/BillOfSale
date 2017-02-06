@@ -79,6 +79,11 @@ public class BillController {
                 + " PaymentType: " + bPaymentType;
 
     }
+    public double genrateSubBill(double price, int sQty) {
+        double subBill;
+        subBill = price * sQty;
+        return subBill;
+    }
     
     public double generateTotalBill(double subTotal){
         double totalBill = subTotal* bHST;
