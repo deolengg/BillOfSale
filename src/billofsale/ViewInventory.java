@@ -16,7 +16,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
-
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -33,7 +32,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-public class BillOfSale extends Application {
+public class ViewInventory extends Application {
 
     @Override
     public void start(Stage primaryStage) {
@@ -127,11 +126,5 @@ public class BillOfSale extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
    
-    }
-
-
-    public static void main(String[] args) {
-        // TODO code application logic here
-        launch(args);
     }
 }

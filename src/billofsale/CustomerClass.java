@@ -9,22 +9,21 @@ package billofsale;
  *
  * @author karan
  */
-public class CustomerController {
+public class CustomerClass {
     private String cName;
-    private int cCustomerNumber;
+    private int cCustomer_Id;
     private int cPhoneNumber;
-    private String cEmailId;
     private int CCounter = 01;
     
     public void CustomerController(){
         
     }
     
-    public void CustomerController(String name,int number,int phone,String email){
+    public void CustomerController(String name,int number,int phone){
         cName=name;
-        cCustomerNumber =number;
+        cCustomer_Id =number;
         cPhoneNumber=phone;
-        cEmailId=email;
+        
     }
     
     
@@ -36,18 +35,11 @@ public class CustomerController {
     }
     
     public int getCustomerNumber(){
-        return cCustomerNumber;
+        return cCustomer_Id;
     }
     public void setCustomerNumber(int Cnumber){
         Cnumber=CCounter++;
-        cCustomerNumber=Cnumber;
-    }
-    
-    public String getCustomerEmailId(){
-        return cEmailId;
-    }
-    public void setCustomerEmailId(String cEmailId){
-        this.cEmailId=cEmailId;
+        cCustomer_Id=Cnumber;
     }
     
     public int getCustomerPhoneNumber(){

@@ -9,33 +9,31 @@ package billofsale;
  *
  * @author karan
  */
-public class BillController {
+public class BillClass {
 
-    private int bBillNumber;
+    private int bBill_Id;
     private String bBillDate;
-    private String bDescription;
     private double bHST; //13%
     private String bPaymentType;
-    private static int counter = 1001;
+    private static int counter = 001;
 
-    public BillController(int bnumber, String bdate, String dbesc, double bHst, String bpayment) {
-        bBillNumber = bnumber;
+    public BillClass(int bnumber, String bdate, double bHst, String bpayment) {
+        bBill_Id = bnumber;
         bBillDate = bdate;
-        bDescription = dbesc;
         bHST = bHst;
         bPaymentType = bpayment;
     }
 
-    public BillController() {
+    public BillClass() {
 
     }
 
     public int getBillNumber() {
-        return bBillNumber = counter++;
+        return bBill_Id = counter++;
     }
 
     public void setBillNumber(int bnumber) {
-        bBillNumber = bnumber;
+        bBill_Id = bnumber;
     }
 
     public String getBillDate() {
@@ -44,10 +42,6 @@ public class BillController {
 
     public void setBillDate(String billDate) {
         bBillDate = billDate;
-    }
-
-    public String getBillDesc() {
-        return bDescription;
     }
 
     public double getHst() {
@@ -59,10 +53,6 @@ public class BillController {
         bHST = bhst;
     }
 
-    public void setBillDesc(String desc) {
-        bDescription = desc;
-    }
-
     public String getPaymentType() {
         return bPaymentType;
     }
@@ -72,23 +62,22 @@ public class BillController {
     }
 
     public String toStringBill() {
-        return "Bill Number :" + bBillNumber
+        return "Bill Number :" + bBill_Id
                 + " BillDate: " + bBillDate
-                + " Description: " + bDescription
                 + " HST: " + bHST
                 + " PaymentType: " + bPaymentType;
 
     }
+
     public double genrateSubBill(double price, int sQty) {
         double subBill;
         subBill = price * sQty;
         return subBill;
     }
-    
-    public double generateTotalBill(double subTotal){
-        double totalBill = subTotal* bHST;
+
+    public double generateTotalBill(double subTotal) {
+        double totalBill = subTotal * bHST;
         return totalBill;
     }
-    
 
 }
