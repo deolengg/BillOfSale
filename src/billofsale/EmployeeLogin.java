@@ -1,7 +1,6 @@
 package billofsale;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,6 +27,10 @@ import javafx.stage.Stage;
  * @author karan
  */
 public class EmployeeLogin extends Application {
+
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    Connection conn = null;
 
     @Override
     public void start(Stage primaryStage) {
@@ -102,13 +105,9 @@ public class EmployeeLogin extends Application {
             @Override
             public void handle(javafx.event.ActionEvent event) {
                 try {
-                    Class.forName("oracle.jdbc.driver.OracleDriver");
-                    //mysql
-                    //Class.forName(com.mysql.jdbc.Driver);
-                    System.out.println("Driver Found");
-                    Connection con = DriverManager.getConnection("jdbc:oracle:thin:@dilbert.humber.ca:1521:grok", "n01168570", "oracle");
-                    System.out.println("Connection Done");
-                    PreparedStatement st = con.prepareStatement("select count(*) as total from employeelog where id = ? and pwd= ?");
+
+                    conn = SqlConnection.DbConnector();
+                    PreparedStatement st = conn.prepareStatement("select count(*) as total from employeelog where id = ? and pwd= ?");
                     String username = userTextField.getText();
                     String password = pwBox.getText();
                     st.setString(1, username);
@@ -117,33 +116,28 @@ public class EmployeeLogin extends Application {
                     ResultSet RS = st.executeQuery();
                     if (RS.next()) {
                         if (RS.getInt("total") != 1) {
-
                             Alert alert = new Alert(AlertType.ERROR);
                             alert.setTitle("Fail !");
-
                             alert.setContentText("User Doesn't Exists in Database");
-
                             alert.showAndWait();
 
                         } else {
-
                             System.out.println("User Doesn't Exits");
-
                             Alert alert = new Alert(AlertType.INFORMATION);
                             alert.setTitle("Login Success");
-
                             alert.setContentText("Welcome " + username);
-
                             alert.showAndWait();
                             System.out.println("User Exits");
+                            EmployeeMenu emu = new EmployeeMenu();
+                            emu.start(primaryStage);
 
                         }
                     }
 
-                    con.close();
+                    conn.close();
                     System.out.println("Connection Closed");
 
-                } catch (SQLException | ClassNotFoundException obj) {
+                } catch (SQLException obj) {
                     System.err.print("Either Drive OR Class Not Found " + obj);
                 }
             }

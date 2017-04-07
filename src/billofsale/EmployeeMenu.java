@@ -1,6 +1,8 @@
 package billofsale;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -27,6 +29,14 @@ public class EmployeeMenu extends Application {
     Menu inventryMenu = new Menu("Inventory");
     MenuItem viewStock = new MenuItem("View Stock");
     MenuItem updateStock = new MenuItem("Update Stock");
+    viewStock.setOnAction(new EventHandler<ActionEvent>() {
+        @Override
+        public void handle(ActionEvent e) {
+            ViewInventory vin = new ViewInventory();
+            vin.start(primaryStage);
+        }
+    });
+    
 
     inventryMenu.getItems().addAll(viewStock, updateStock,
         new SeparatorMenuItem());

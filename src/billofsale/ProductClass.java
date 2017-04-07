@@ -8,28 +8,24 @@ package billofsale;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-
 /**
  *
  * @author karan
  */
 public class ProductClass {
-    
+
     private final SimpleStringProperty productId;
     private final SimpleStringProperty productName;
     private final SimpleStringProperty productPrize;
     private final SimpleStringProperty productQuantity;
-    
 
-    public ProductClass(String code,String name, String price, String qty) {
+    public ProductClass(String code, String name, String price, String qty) {
         this.productId = new SimpleStringProperty(code);
         this.productName = new SimpleStringProperty(name);
         this.productPrize = new SimpleStringProperty(price);
         this.productQuantity = new SimpleStringProperty(qty);
     }
 
-   
-    
     public String getpName() {
         return productName.get();
     }
@@ -37,6 +33,7 @@ public class ProductClass {
     public void setpName(String name) {
         productName.set(name);
     }
+
     public StringProperty productNameProperty() {
         return productName;
     }
@@ -48,6 +45,7 @@ public class ProductClass {
     public void setp_Id(String code) {
         productId.set(code);
     }
+
     public StringProperty productIdProperty() {
         return productId;
     }
@@ -59,10 +57,10 @@ public class ProductClass {
     public void setpPrice(String price) {
         productPrize.set(price);
     }
+
     public StringProperty productPrizeProperty() {
         return productPrize;
     }
-    
 
     public String getpQuantity() {
         return productQuantity.get();
@@ -71,6 +69,7 @@ public class ProductClass {
     public void setpQuantity(String setQty) {
         productQuantity.set(setQty);
     }
+
     public StringProperty productQuantityProperty() {
         return productQuantity;
     }
