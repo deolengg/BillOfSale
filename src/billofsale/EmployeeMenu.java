@@ -1,5 +1,8 @@
 package billofsale;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,7 +18,11 @@ import javafx.stage.Stage;
  *
  * @author karan
  */
-public class EmployeeMenu extends Application {
+public class EmployeeMenu extends Application 
+{
+    PreparedStatement pst = null;
+    ResultSet rs = null;
+    Connection conn = null;
     @Override
     public void start(Stage primaryStage) {
     BorderPane root = new BorderPane();
@@ -36,6 +43,12 @@ public class EmployeeMenu extends Application {
             vin.start(primaryStage);
         }
     });
+    
+    updateStock.setOnAction(e-> {
+        updateStock ups = new updateStock();
+        ups.start(primaryStage);
+    });
+    
     
 
     inventryMenu.getItems().addAll(viewStock, updateStock,
