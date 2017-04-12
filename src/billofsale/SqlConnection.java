@@ -19,9 +19,9 @@ public class SqlConnection {
     public static Connection DbConnector() {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            System.out.println("Driver Found");
+            //System.out.println("Driver Found");
             conn = DriverManager.getConnection("jdbc:oracle:thin:@dilbert.humber.ca:1521:grok", "n01168570", "oracle");
-            System.out.println("Connection Done");
+            //System.out.println("Connection Done");
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();
         }

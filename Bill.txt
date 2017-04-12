@@ -1,0 +1,5 @@
+Customer Name :Jaskaran
+Customer Phone :56364393
+Payment Type: Visa
+Products[billofsale.BillClass@167d6e50, billofsale.BillClass@3b462456, billofsale.BillClass@28274876, billofsale.BillClass@3009e2da, billofsale.BillClass@4d7b1565]
+Total Bill20997.66

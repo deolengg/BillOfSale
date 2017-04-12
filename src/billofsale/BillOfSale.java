@@ -5,12 +5,13 @@
  */
 package billofsale;
 
-
-public class BillOfSale{
+public class BillOfSale {
 
 
     public static void main(String[] args) {
         // TODO code application logic here
         javafx.application.Application.launch(EmployeeLogin.class);
+        //launch(args);
     }
 }
+    

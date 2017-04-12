@@ -33,7 +33,7 @@ import javafx.stage.Stage;
  *
  * @author Karan
  */
-public class updateStock {
+public class UpdateStock {
     PreparedStatement pst = null;
     ResultSet rs = null;
     Connection conn = null;
@@ -55,7 +55,7 @@ public class updateStock {
         Label userName = new Label("Product");
         root.add(userName, 0, 1);
         final ComboBox productNames = new ComboBox();
-        productNames.setEditable(true);
+        productNames.setEditable(false);
         root.add(productNames, 1, 1);
 
         Label currentqtylabel = new Label("Current Quantity");
@@ -128,11 +128,12 @@ public class updateStock {
                 pst = conn.prepareStatement(query3);
                 rs = pst.executeQuery();
                 conn.commit();
+                conn.close();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Update");
                             alert.setContentText("Stock added");
                             alert.showAndWait();
-                            productNames.getItems().clear();
+                            //productNames.getItems().clear();
                             cqtytextbox.setText("");
                             nqtytextbox.setText("");
                             

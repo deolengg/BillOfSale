@@ -5,79 +5,62 @@
  */
 package billofsale;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
+ * 
  * @author karan
  */
 public class BillClass {
 
-    private int bBill_Id;
-    private String bBillDate;
-    private double bHST; //13%
-    private String bPaymentType;
-    private static int counter = 001;
+    private  final SimpleStringProperty productName;
+    private  final SimpleStringProperty productPrize;
+    private final SimpleStringProperty productQuantity;
+    
+    
 
-    public BillClass(int bnumber, String bdate, double bHst, String bpayment) {
-        bBill_Id = bnumber;
-        bBillDate = bdate;
-        bHST = bHst;
-        bPaymentType = bpayment;
+    public BillClass(String productname, String cost, String  qty) {
+        this.productName = new SimpleStringProperty(productname);
+        this.productPrize =new SimpleStringProperty(cost);
+        this.productQuantity = new SimpleStringProperty(qty);
+    }
+    
+    public String getpName() {
+        return productName.get();
     }
 
-    public BillClass() {
-
+    public void setpName(String name) {
+        productName.set(name);
     }
 
-    public int getBillNumber() {
-        return bBill_Id = counter++;
+    public StringProperty productNameProperty() {
+        return productName;
+    }
+    
+    public String getpPrize() {
+        return productPrize.get();
     }
 
-    public void setBillNumber(int bnumber) {
-        bBill_Id = bnumber;
+    public void setpPrize(String prize) {
+        productPrize.set(prize);
     }
 
-    public String getBillDate() {
-        return bBillDate;
+    public StringProperty productPrizeProperty() {
+        return productPrize;
+    }
+    
+    public String getpQuantity() {
+        return productQuantity.get();
     }
 
-    public void setBillDate(String billDate) {
-        bBillDate = billDate;
+    public void setpQuantity(String setQty) {
+        productQuantity.set(setQty);
     }
 
-    public double getHst() {
-        return bHST;
-    }
-
-    public void setHst(double bhst) {
-        bhst = 0.13;
-        bHST = bhst;
-    }
-
-    public String getPaymentType() {
-        return bPaymentType;
-    }
-
-    public void setPaymentType(String bpayment) {
-        bPaymentType = bpayment;
-    }
-
-    public String toStringBill() {
-        return "Bill Number :" + bBill_Id
-                + " BillDate: " + bBillDate
-                + " HST: " + bHST
-                + " PaymentType: " + bPaymentType;
-
-    }
-
-    public double genrateSubBill(double price, int sQty) {
-        double subBill;
-        subBill = price * sQty;
-        return subBill;
-    }
-
-    public double generateTotalBill(double subTotal) {
-        double totalBill = subTotal * bHST;
-        return totalBill;
+    public StringProperty productQuantityProperty() {
+        return productQuantity;
     }
 
 }

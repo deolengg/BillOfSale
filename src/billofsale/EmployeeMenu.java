@@ -45,7 +45,7 @@ public class EmployeeMenu extends Application
     });
     
     updateStock.setOnAction(e-> {
-        updateStock ups = new updateStock();
+        UpdateStock ups = new UpdateStock();
         ups.start(primaryStage);
     });
     
@@ -56,6 +56,10 @@ public class EmployeeMenu extends Application
     
     Menu billMenu = new Menu("Bill");
     MenuItem genrateBill = new MenuItem("Genrate Bill");
+    genrateBill.setOnAction(e->{
+    GenrateBill gb = new GenrateBill();
+    gb.start(primaryStage);
+    });
     
     billMenu.getItems().addAll(genrateBill,
         new SeparatorMenuItem());
