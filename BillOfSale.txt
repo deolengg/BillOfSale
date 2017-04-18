@@ -1,0 +1,12 @@
+Bill Of Sale     Customer Name       Jaskaran
+Customer Number     123123
+Payment Type        Visa
+Product List        
+-----------------------------------------
+Product Name   Quantity      Cost  
+[Samsung Galaxy S8, Google Pixel XL]      [22, 22]      [21978, 19778]
+-----------------------------------------
+Sub-Ammount         41756
+HST (taxes)         5428.28
+                    ------------------
+Total-Ammount        47184.28

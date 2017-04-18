@@ -19,5 +19,10 @@ public class GenrateBillClass {
         double totalBill = subBill+subTotal;
         return totalBill;
     }
+    public double hst(double subTotal)
+    {
+    double subBill = subTotal * bHST;
+    return subBill;
+    }
 
 }
