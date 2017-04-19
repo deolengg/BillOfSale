@@ -1,12 +1,12 @@
-Bill Of Sale     Customer Name       Jaskaran
-Customer Number     123123
-Payment Type        Visa
+Bill Of Sale     Customer Name       rozil
+Customer Number     9999999999
+Payment Type        Master Card
 Product List        
 -----------------------------------------
 Product Name   Quantity      Cost  
-[Samsung Galaxy S8, Google Pixel XL]      [22, 22]      [21978, 19778]
+[Apple Iphone 7, Google Pixel XL]      [2, 2]      [2198, 1798]
 -----------------------------------------
-Sub-Ammount         41756
-HST (taxes)         5428.28
+Sub-Ammount         3996
+HST (taxes)         519.48
                     ------------------
-Total-Ammount        47184.28
+Total-Ammount        4515.48

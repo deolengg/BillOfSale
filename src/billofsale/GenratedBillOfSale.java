@@ -46,8 +46,8 @@ import javafx.stage.Stage;
 public class GenratedBillOfSale {
 
     Connection conn = null;
-    PreparedStatement pst = null, pst2 = null, pst3 = null, pst4 = null, pst5 = null, pst6 = null;
-    ResultSet rs = null, rs2 = null, rs3 = null, rs4 = null, rs5 = null, rs6 = null;
+    PreparedStatement pst = null, pst2 = null, pst3 = null, pst4 = null, pst5 = null, pst6 = null,pst7=null;
+    ResultSet rs = null, rs2 = null, rs3 = null, rs4 = null, rs5 = null, rs6 = null ,rs7=null;
 
     int estimation;
     double finalTotal;
@@ -218,12 +218,23 @@ public class GenratedBillOfSale {
                 }
             }
             String deleteTempTable = "delete from productlist";
+            String deleteCustomerTable="delete from customertable";
             try {
                 conn = SqlConnection.DbConnector();
                 pst6 = conn.prepareStatement(deleteTempTable);
                 pst6.executeQuery();
                 conn.commit();
                 pst6.close();
+                conn.close();
+            } catch (SQLException ex) {
+                System.out.println("2 : " + ex.getMessage());
+            }
+            try {
+                conn = SqlConnection.DbConnector();
+                pst7 = conn.prepareStatement(deleteCustomerTable);
+                pst7.executeQuery();
+                conn.commit();
+                pst7.close();
                 conn.close();
             } catch (SQLException ex) {
                 System.out.println("2 : " + ex.getMessage());
